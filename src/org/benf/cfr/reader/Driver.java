@@ -36,7 +36,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
-class Driver {
+public class Driver {
 
     /*
      * When analysing individual classes, we behave a bit differently to jars - this *Could* probably
