@@ -261,6 +261,9 @@ class Driver {
                 TypeUsageInformation typeUsageInformation = collectingDumper.getRealTypeUsageInformation();
                 d = dumperFactory.getNewTopLevelDumper(classType, summaryDumper, typeUsageInformation, illegalIdentifierDump);
                 d = dcCommonState.getObfuscationMapping().wrap(d);
+                if (options.getOption(OptionsImpl.TRACK_BYTECODE_LOC)) {
+                    d = dumperFactory.wrapLineNoDumper(d);
+                }
 
                 c.dump(d);
                 d.newln();
