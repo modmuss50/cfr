@@ -229,4 +229,19 @@ public abstract class DelegatingDumper implements Dumper {
     public int getCurrentLine() {
         return delegate.getCurrentLine();
     }
+
+    @Override
+    public Dumper dumpClassDoc(JavaTypeInstance owner) {
+        return delegate.dumpClassDoc(owner);
+    }
+
+    @Override
+    public Dumper dumpMethodDoc(MethodPrototype method) {
+        return delegate.dumpMethodDoc(method);
+    }
+
+    @Override
+    public Dumper dumpFieldDoc(Field field, JavaTypeInstance owner) {
+        return delegate.dumpFieldDoc(field, owner);
+    }
 }
